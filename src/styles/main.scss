@@ -1,6 +1,150 @@
 @import "normalize.css";
 
+// font-family alias
+$sans-serif: Muli, "Helvetica Neue", Helvetica, Arial, sans-serif;
+$sans-serif-yu: Muli, "Helvetica Neue", 游ゴシック, YuGothic, Helvetica, Arial, sans-serif;
+$serif: Times, serif;
+
+// basic interval width between elements
+$gutter: 24px;
+
+$base-font-size: 16px;
+$base-line-height: $base-font-size * 1.45;
+
+$article-title-font-size: $base-font-size + 7px;
+$article-info-font-size: $base-font-size - 1px;
+
+@mixin article-title {
+  font-size: $article-title-font-size;
+
+  @media screen and(max-width: 720px) {
+    font-size: $article-title-font-size - 2px;
+    line-height: 1.5;
+  }
+
+  @media screen and(max-width: 480px) {
+    font-size: $article-title-font-size - 3px;
+  }
+}
+
+$second-group-margin: $gutter * 0.625;
+
+// main content in the center
+$main-width: 980px; // or 1080px
+$main-space-width: $gutter * 3;
+
+// theme colors
+$background-white: #FEFEFE;
+$common-white: $background-white + #010101;
+
+$common-black: #333333;
+$common-gray: #8F8F8F;
+$common-violet: #8e44ad; //#a900d6; // or #C900FF; //or #b44c97;
+
+$common-hover-violet: lighten(#935ab9, 10);// #C8A9D6;
+$common-line-violet: $common-hover-violet;
+
+$common-text-gray: #727272;
+$common-line-gray: #E1E1E1;
+
+$head-decoration-violet: #bd8fd1;
+$title-gray: #5a5a5a;
+
+$code-bg-color: #F0F0F0;
+$footer-color: #F0F0F0;
+
+$mobile-max-width: $main-width * 0.75;
+
 body {
+	background: #F0F0F0;
+	height: 100%;
+	font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", YuGothic;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:visited { color: inherit; }
+
+.centered {
+  margin: 0 auto;
+  width: 100%;
+  max-width: $main-width;
+  padding-left: $main-space-width;
+  padding-right: $main-space-width;
+  overflow: auto;
+
+  // 左右の padding の分も考慮
+  @media screen and(max-width: $main-width + $main-space-width * 2 + 24px){
+    width: auto;
+  }
+  @media screen and(max-width: 920px){
+    padding-left: $gutter * 2;
+    padding-right: $gutter * 2;
+  }
+  @media screen and(max-width: 720px){
+    padding-left: $gutter;
+    padding-right: $gutter;
+  }
+  @media screen and(max-width: 480px){
+    padding-left: $gutter * 0.5;
+    padding-right: $gutter * 0.5;
+  }
+}
+
+.centered {
+	padding-top: 4rem;
+	background: #FEFEFE;
+}
+
+article.centered {
+	padding-top: 3rem;
+	padding-bottom: 8rem;
+}
+
+main {
+	position: relative;
+	text-align: center;
+}
+
+#container {
+	height: 100%;
+	padding-top: 2rem;
+}
+
+#circle-name {
+	font-size: 2.4rem;
+	font-weight: 200;
+	letter-spacing: 1rem;
+	text-align: center;
+}
+
+#circle-info {
+	font-size: 1.1rem;
+	font-weight: normal;
+	text-align: center;
+}
+
+hr {
+	margin-top: 3rem;
+	max-width: 50%;
+	border-bottom: 1px solid #EEEEEE;
+}
+
+li {
+	font-size: 1.3rem;
+	font-weight: normal;
+	list-style: none;
+	line-height: 2.5rem;
+}
+
+#twitter {
+	color: #55acee;
+}
+
+#soundcloud {
+	color: #ff7700;
 }
 
 @import "footer";

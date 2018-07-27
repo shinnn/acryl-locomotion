@@ -8,7 +8,8 @@
 	"license": "ISC",
 	"scripts": {
 		"start": "node --no-warnings build.js",
-		"test": "npm run start --silent"
+		"test": "npm run start --silent",
+		"deploy": "gh-pages --branch deployy --dist dest"
 	},
 	"dependencies": {
 		"normalize.css": "^8.0.0"
@@ -17,11 +18,12 @@
 		"@shinnn/eslint-config": "^6.3.0",
 		"autoprefixer": "^9.0.1",
 		"eslint": "^5.2.0",
+		"gh-pages": "^1.2.0",
 		"htmlparser2": "^3.9.2",
 		"marko": "^4.12.2",
 		"minimatch": "^3.0.4",
 		"node-sass": "^4.9.2",
-		"open-in-chrome": "^0.0.1",
+		"open-in-chrome": "^0.0.2",
 		"p-settle": "^2.1.0",
 		"polka": "^0.4.0",
 		"postcss": "^7.0.1",
