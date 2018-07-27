@@ -1,5 +1,6 @@
-'use strict';
+@import "normalize.css";
 
-const {join} = require('path');
+body {
+}
 
-const SRC = join(__dirname, 'src');
+@import "footer";

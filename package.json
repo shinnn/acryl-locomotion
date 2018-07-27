@@ -7,15 +7,34 @@
 	"repository": "shinnn/acryl-locomotion",
 	"license": "ISC",
 	"scripts": {
-		"start": "node build.js",
+		"start": "node --no-warnings build.js",
 		"test": "npm run start --silent"
 	},
-	"dependencies": {},
+	"dependencies": {
+		"normalize.css": "^8.0.0"
+	},
 	"devDependencies": {
+		"@shinnn/eslint-config": "^6.3.0",
+		"autoprefixer": "^9.0.1",
+		"eslint": "^5.2.0",
 		"htmlparser2": "^3.9.2",
-		"opn": "^5.3.0",
+		"marko": "^4.12.2",
+		"minimatch": "^3.0.4",
+		"node-sass": "^4.9.2",
+		"open-in-chrome": "^0.0.1",
+		"p-settle": "^2.1.0",
 		"polka": "^0.4.0",
+		"postcss": "^7.0.1",
+		"require-from-string": "^2.0.2",
 		"sane": "^2.5.2",
+		"sass-package-importer": "^1.0.0",
 		"serve-static": "^1.13.2"
+	},
+	"eslintConfig": {
+		"extends": "@shinnn",
+		"rules": {
+			"no-process-exit": "off",
+			"node/no-unpublished-require": "off"
+		}
 	}
 }
